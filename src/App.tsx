@@ -168,6 +168,7 @@ export default function App() {
                     ]);
                 } catch (fastErr) {
                     // Fallback to re-encode
+                    console.log(fastErr);
                     setLogs((l) => [...l, `Re-encoding ${outputName}...`]);
 
                     await ffmpeg.exec([
@@ -494,11 +495,6 @@ export default function App() {
             {logs.join("\n")}
           </pre>
                 )}
-
-                <p className="tip">
-                    💡 Tip: Keep clips short for faster processing. Everything runs locally
-                    in your browser.
-                </p>
             </div>
         </div>
     );
